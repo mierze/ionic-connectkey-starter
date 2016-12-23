@@ -1,0 +1,35 @@
+//top left / right menus + animation
+$slidemenu-width: 300px;
+
+.slide-menu-left,
+.slide-menu-right {
+    position          : fixed;
+    top               : auto !important;
+    z-index           : $z-index-popup;
+    width             : $slidemenu-width;
+    max-height        : 100% !important;
+    //animation duration
+    -webkit-transition: margin 0.5s ease;
+    -moz-transition   : margin 0.5s ease;
+    -o-transition     : margin 0.5s ease;
+    -ms-transition    : margin 0.5s ease;
+    transition        : margin 0.5s ease;
+    border: 2px solid $dark;
+    background-color: $light;
+    overflow-y        : scroll !important;
+
+    &.open {
+        margin-left : 5px;
+        margin-right: 5px;
+    }
+}
+
+.slide-menu-left {
+    left  : 0;
+    margin: 0 0 0 -400px;
+}
+
+.slide-menu-right {
+    right : 0;
+    margin: 0 -400px 0 0;
+}
