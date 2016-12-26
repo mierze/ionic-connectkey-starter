@@ -18,22 +18,21 @@ var paths = {
     'clean': [production, 'build'],
     'html': ['./app/**/*.html'],
     'build': ['./build/**/*.js'],
-    'extras': ['./app/res/**/*'],
-    'js': ['./app/*.js', './app/**/*.js', '!./app/res/**']
+    'statics': ['./app/statics/**/*'],
+    'js': ['./app/*.js', './app/**/*.js', './lib/**/*.js', '!./app/statics/**']
 };
 
 gulp.task('build', function(cb) {
     //full build
-    runSequence('clean', ['build-sass', 'build-html', 'build-js'], 'build-res', 'clean-build', cb);
+    runSequence('clean', ['build-sass', 'build-html', 'build-js'], 'build-statics', 'clean-build', cb);
 });
 
 gulp.task('watch', function() {
     gulp.watch(paths.sass, ['build-sass']);
     gulp.watch(paths.html, ['build-html']);
     gulp.watch(paths.js, ['build-js']);
-    gulp.watch(paths.extras, ['extras']);
+    gulp.watch(paths.statics, ['build-statics']);
 });
-
 
 gulp.task('build-js', function(cb) {
     //just build javascript
@@ -85,10 +84,10 @@ gulp.task('build-sass', function(done) {
         .on('end', done);
 });
 
-gulp.task('build-res', function() {
+gulp.task('build-statics', function() {
     //move static resources
-    gulp.src(paths.extras)
-        .pipe(gulp.dest('./' + production + '/res'));
+    gulp.src(paths.statics)
+        .pipe(gulp.dest('./' + production + '/statics'));
 });
 
 gulp.task('clean', function() {

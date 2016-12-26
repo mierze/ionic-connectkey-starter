@@ -1,7 +1,12 @@
 //ionic variables to override
 @import './variables';
 
-//custom components
+//global styling
+@import './global';
+
+//added positioning classes 
 @import './position';
+//useful animation library
 @import './animate';
+//custom slide menu
 @import './slide-menu';
