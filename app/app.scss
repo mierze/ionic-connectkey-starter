@@ -1,5 +1,11 @@
+/*
+    Entry point SASS file. imports everything we need
+*/
+
 //our app custom styling
 @import './theme/index';
+//page specific styling
+@import './pages/index';
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "./statics/fonts" !default;

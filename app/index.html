@@ -4,26 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>CK Starter</title>
-
         <link rel="manifest" href="manifest.json">
-
         <link href="style.min.css" rel="stylesheet">
-
         <!-- ionic/angularjs -->
         <script src="statics/ionic.bundle.js"></script>
-
         <!-- our bundle -->
         <script src="bundle.js"></script>
     </head>
 
     <body ng-app="app">
+
+        <!-- nav bar for application -->
         <ion-nav-bar align-title="center" class="bar-dark">
             <ion-nav-back-button class="button-clear"></ion-nav-back-button>
             <ion-nav-title>
                 <h1 class="title">ConnectKey Starter</h1>
             </ion-nav-title>
         </ion-nav-bar>
+        <!-- end nav bar -->
 
+        <!-- app router inflates to here -->
         <ion-nav-view></ion-nav-view>
     </body>
 
